@@ -40,7 +40,7 @@ eb create production
 
 #### Step 4: Set Environment Variables
 ```bash
-eb setenv MONGO_URI="mongodb+srv://agroverse:Agroverse%402004@agroverse.dveiewz.mongodb.net/?retryWrites=true&w=majority&appName=AgroVerse" JWT_SECRET="qwertyuiop" NODE_ENV="production"
+eb setenv MONGO_URI="your-mongo-uri" JWT_SECRET="your-jwt-secret" NODE_ENV="production"
 ```
 
 #### Step 5: Deploy
@@ -88,10 +88,10 @@ aws logs create-log-group --log-group-name /ecs/agroverse-backend
 #### Step 4: Store Environment Variables in Parameter Store
 ```bash
 # Store MONGO_URI securely
-aws ssm put-parameter --name "/agroverse/mongo-uri" --value "mongodb+srv://agroverse:Agroverse%402004@agroverse.dveiewz.mongodb.net/?retryWrites=true&w=majority&appName=AgroVerse" --type "SecureString"
+aws ssm put-parameter --name "/agroverse/mongo-uri" --value "your-mongo-uri" --type "SecureString"
 
 # Store JWT_SECRET securely
-aws ssm put-parameter --name "/agroverse/jwt-secret" --value "qwertyuiop" --type "SecureString"
+aws ssm put-parameter --name "/agroverse/jwt-secret" --value "your-jwt-secret" --type "SecureString"
 ```
 
 #### Step 5: Update and Register Task Definition
@@ -148,8 +148,8 @@ git clone https://github.com/your-username/agroverse-backend.git
 cd agroverse-backend
 
 # Create .env file
-echo "MONGO_URI=mongodb+srv://agroverse:Agroverse%402004@agroverse.dveiewz.mongodb.net/?retryWrites=true&w=majority&appName=AgroVerse" > .env
-echo "JWT_SECRET=qwertyuiop" >> .env
+echo "MONGO_URI=your-mongo-uri" > .env
+echo "JWT_SECRET=your-jwt-secret" >> .env
 echo "NODE_ENV=production" >> .env
 echo "PORT=5000" >> .env
 

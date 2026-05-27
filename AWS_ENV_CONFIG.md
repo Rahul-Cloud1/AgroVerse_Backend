@@ -6,12 +6,12 @@ Your application requires the following environment variables to be configured i
 
 ### 1. MONGO_URI
 - **Description**: MongoDB connection string
-- **Current Value**: `mongodb+srv://agroverse:Agroverse%402004@agroverse.dveiewz.mongodb.net/?retryWrites=true&w=majority&appName=AgroVerse`
+- **Current Value**: `your-mongo-uri`
 - **Security**: Store as a secure parameter in AWS Systems Manager Parameter Store
 
 ### 2. JWT_SECRET
 - **Description**: Secret key for JWT token signing
-- **Current Value**: `qwertyuiop`
+- **Current Value**: `your-jwt-secret`
 - **Security**: Store as a SecureString parameter in AWS Systems Manager Parameter Store
 - **Recommendation**: Generate a stronger secret for production
 
