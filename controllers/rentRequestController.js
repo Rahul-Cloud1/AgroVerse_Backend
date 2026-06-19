@@ -24,6 +24,23 @@ exports.createRentRequest = async (req, res) => {
       });
     }
 
+    // Validate fields
+    if (!equipmentId || !userId) {
+      return res.status(400).json({
+        message: 'equipmentId and userId are required',
+      });
+    }
+
+    // Find equipment
+    const equipment = await Equipment.findById(equipmentId);
+
+    if (!equipment) {
+      return res.status(404).json({
+        message: 'Equipment not found',
+      });
+    }
+
+    // Create request
     const rentRequest = new RentRequest({
       equipmentId,
       equipmentName: equipment.name,
