@@ -1,0 +1,101 @@
+{
+  "auth": {
+    "register": {
+      "success": "Registration successful",
+      "userExists": "User already exists",
+      "error": "Registration failed"
+    },
+    "login": {
+      "success": "Login successful",
+      "invalidCredentials": "Invalid email or password",
+      "error": "Login failed"
+    },
+    "logout": {
+      "success": "Logout successful"
+    },
+    "unauthorized": "Unauthorized. Please log in.",
+    "forbidden": "Access denied."
+  },
+  "assets": {
+    "create": {
+      "success": "Asset created successfully",
+      "error": "Failed to create asset"
+    },
+    "update": {
+      "success": "Asset updated successfully",
+      "notFound": "Asset not found",
+      "error": "Failed to update asset"
+    },
+    "delete": {
+      "success": "Asset deleted successfully",
+      "error": "Failed to delete asset"
+    },
+    "list": {
+      "success": "Assets retrieved successfully",
+      "error": "Failed to retrieve assets"
+    }
+  },
+  "equipment": {
+    "create": {
+      "success": "Equipment created successfully",
+      "error": "Failed to create equipment"
+    },
+    "update": {
+      "success": "Equipment updated successfully",
+      "notFound": "Equipment not found",
+      "error": "Failed to update equipment"
+    },
+    "delete": {
+      "success": "Equipment deleted successfully",
+      "error": "Failed to delete equipment"
+    },
+    "list": {
+      "success": "Equipment list retrieved successfully",
+      "error": "Failed to retrieve equipment"
+    }
+  },
+  "orders": {
+    "create": {
+      "success": "Order created successfully",
+      "error": "Failed to create order"
+    },
+    "update": {
+      "success": "Order updated successfully",
+      "notFound": "Order not found",
+      "error": "Failed to update order"
+    },
+    "delete": {
+      "success": "Order deleted successfully",
+      "error": "Failed to delete order"
+    },
+    "list": {
+      "success": "Orders retrieved successfully",
+      "error": "Failed to retrieve orders"
+    }
+  },
+  "rentRequests": {
+    "create": {
+      "success": "Rent request created successfully",
+      "error": "Failed to create rent request"
+    },
+    "update": {
+      "success": "Rent request updated successfully",
+      "notFound": "Rent request not found",
+      "error": "Failed to update rent request"
+    },
+    "delete": {
+      "success": "Rent request deleted successfully",
+      "error": "Failed to delete rent request"
+    },
+    "list": {
+      "success": "Rent requests retrieved successfully",
+      "error": "Failed to retrieve rent requests"
+    }
+  },
+  "validation": {
+    "required": "This field is required",
+    "invalidEmail": "Invalid email format",
+    "invalidPassword": "Password must be at least 6 characters",
+    "serverError": "Server error. Please try again later."
+  }
+}

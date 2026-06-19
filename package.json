@@ -19,7 +19,11 @@
     "cors": "^2.8.5",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
+    "i18next": "^26.2.0",
+    "i18next-fs-backend": "^2.6.6",
+    "i18next-http-middleware": "^3.9.7",
     "jsonwebtoken": "^9.0.2",
+    "jwt-decode": "^4.0.0",
     "mongoose": "^8.15.0",
     "multer": "^2.0.0"
   }

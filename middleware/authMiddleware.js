@@ -1,11 +1,15 @@
 const jwt = require('jsonwebtoken');
+ 
+ const authMiddleware = (req, res, next) => {
+  const header = req.header('Authorization');
+  if (!header) return res.status(401).json({ message: 'No token provided' });
 
-const authMiddleware = (req, res, next) => {
-  const token = req.header('Authorization');
-  if (!token) return res.status(401).json({ message: 'No token provided' });
-
-  try {
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+  // Accept both "Bearer <token>" (what the app sends) and a raw token,
+  // since jwt.verify will throw on anything that isn't the bare JWT.
+ const token = header.startsWith('Bearer ') ? header.slice(7).trim() : header;
+ 
+   try {
+     const decoded = jwt.verify(token, process.env.JWT_SECRET);
     req.user = decoded.user;
     next();
   } catch (err) {

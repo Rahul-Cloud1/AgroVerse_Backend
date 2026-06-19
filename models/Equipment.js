@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+
 const EquipmentSchema = new mongoose.Schema({
   name: String,
   category: String,

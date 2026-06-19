@@ -7,6 +7,11 @@ const User = require('../models/User');
 // Register and Login
 router.post('/register', register);
 router.post('/login', login);
+router.get('/login', (req, res) => {
+  res.status(405).json({
+    message: 'Login requires a POST request with email and password in the JSON body.',
+  });
+});
 
 // Get user profile
 router.get('/profile', authMiddleware, async (req, res) => {

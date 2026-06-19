@@ -1,0 +1,101 @@
+{
+  "auth": {
+    "register": {
+      "success": "Registro exitoso",
+      "userExists": "El usuario ya existe",
+      "error": "El registro falló"
+    },
+    "login": {
+      "success": "Inicio de sesión exitoso",
+      "invalidCredentials": "Email o contraseña inválidos",
+      "error": "El inicio de sesión falló"
+    },
+    "logout": {
+      "success": "Cierre de sesión exitoso"
+    },
+    "unauthorized": "No autorizado. Por favor inicie sesión.",
+    "forbidden": "Acceso denegado."
+  },
+  "assets": {
+    "create": {
+      "success": "Activo creado exitosamente",
+      "error": "No se pudo crear el activo"
+    },
+    "update": {
+      "success": "Activo actualizado exitosamente",
+      "notFound": "Activo no encontrado",
+      "error": "No se pudo actualizar el activo"
+    },
+    "delete": {
+      "success": "Activo eliminado exitosamente",
+      "error": "No se pudo eliminar el activo"
+    },
+    "list": {
+      "success": "Activos recuperados exitosamente",
+      "error": "No se pudieron recuperar los activos"
+    }
+  },
+  "equipment": {
+    "create": {
+      "success": "Equipo creado exitosamente",
+      "error": "No se pudo crear el equipo"
+    },
+    "update": {
+      "success": "Equipo actualizado exitosamente",
+      "notFound": "Equipo no encontrado",
+      "error": "No se pudo actualizar el equipo"
+    },
+    "delete": {
+      "success": "Equipo eliminado exitosamente",
+      "error": "No se pudo eliminar el equipo"
+    },
+    "list": {
+      "success": "Lista de equipos recuperada exitosamente",
+      "error": "No se pudo recuperar la lista de equipos"
+    }
+  },
+  "orders": {
+    "create": {
+      "success": "Pedido creado exitosamente",
+      "error": "No se pudo crear el pedido"
+    },
+    "update": {
+      "success": "Pedido actualizado exitosamente",
+      "notFound": "Pedido no encontrado",
+      "error": "No se pudo actualizar el pedido"
+    },
+    "delete": {
+      "success": "Pedido eliminado exitosamente",
+      "error": "No se pudo eliminar el pedido"
+    },
+    "list": {
+      "success": "Pedidos recuperados exitosamente",
+      "error": "No se pudieron recuperar los pedidos"
+    }
+  },
+  "rentRequests": {
+    "create": {
+      "success": "Solicitud de alquiler creada exitosamente",
+      "error": "No se pudo crear la solicitud de alquiler"
+    },
+    "update": {
+      "success": "Solicitud de alquiler actualizada exitosamente",
+      "notFound": "Solicitud de alquiler no encontrada",
+      "error": "No se pudo actualizar la solicitud de alquiler"
+    },
+    "delete": {
+      "success": "Solicitud de alquiler eliminada exitosamente",
+      "error": "No se pudo eliminar la solicitud de alquiler"
+    },
+    "list": {
+      "success": "Solicitudes de alquiler recuperadas exitosamente",
+      "error": "No se pudieron recuperar las solicitudes de alquiler"
+    }
+  },
+  "validation": {
+    "required": "Este campo es requerido",
+    "invalidEmail": "Formato de correo electrónico inválido",
+    "invalidPassword": "La contraseña debe tener al menos 6 caracteres",
+    "serverError": "Error del servidor. Por favor intente más tarde."
+  }
+}

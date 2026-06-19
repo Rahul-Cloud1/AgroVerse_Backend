@@ -3,41 +3,115 @@ const Equipment = require('../models/Equipment');
 
 exports.createRentRequest = async (req, res) => {
   try {
-    const equipment = await Equipment.findById(req.body.equipmentId);
-    if (!equipment) return res.status(404).json({ error: 'Equipment not found' });
+    const { equipmentId } = req.body;
+    const requestedBy = req.user?.id;
+
+    if (!requestedBy) {
+      return res.status(401).json({ message: 'Unauthorized' });
+    }
+
+    if (!equipmentId) {
+      return res.status(400).json({
+        message: 'equipmentId is required',
+      });
+    }
+
+    const equipment = await Equipment.findById(equipmentId);
+
+    if (!equipment) {
+      return res.status(404).json({
+        message: 'Equipment not found',
+      });
+    }
 
     const rentRequest = new RentRequest({
-      equipmentId: req.body.equipmentId,
+      equipmentId,
       equipmentName: equipment.name,
       ownerId: equipment.ownerId,
-      requestedBy: req.body.userId,
+      requestedBy,
+      status: 'pending',
     });
+
     await rentRequest.save();
-    res.status(201).json(rentRequest);
+
+    res.status(201).json({
+      message: 'Rent request created successfully',
+      rentRequest,
+    });
+
   } catch (err) {
-    res.status(400).json({ error: err.message });
+    console.log('Create Rent Request Error:', err);
+
+    res.status(500).json({
+      message: 'Failed to create rent request',
+      error: err.message,
+    });
   }
 };
+
 
 exports.getRequestsForOwner = async (req, res) => {
   try {
-    const requests = await RentRequest.find({ ownerId: req.query.ownerId });
-    res.json(requests);
+    const ownerId = req.user?.id;
+
+    if (!ownerId) {
+      return res.status(401).json({ message: 'Unauthorized' });
+    }
+
+    const requests = await RentRequest.find({ ownerId });
+
+    res.status(200).json({
+      message: 'Requests fetched successfully',
+      requests,
+    });
+
   } catch (err) {
-    res.status(500).json({ error: err.message });
+    console.log('Get Requests Error:', err);
+
+    res.status(500).json({
+      message: 'Failed to fetch requests',
+      error: err.message,
+    });
   }
 };
 
+
 exports.approveRequest = async (req, res) => {
   try {
-    const request = await RentRequest.findByIdAndUpdate(
-      req.params.id,
+    const requestId = req.params.id;
+
+    const existingRequest = await RentRequest.findById(requestId);
+
+    if (!existingRequest) {
+      return res.status(404).json({
+        message: 'Rent request not found',
+      });
+    }
+
+    // FIXED: convert ObjectId safely
+    if (existingRequest.ownerId.toString() !== req.user?.id) {
+      return res.status(403).json({
+        message: 'You are not authorized to approve this request',
+      });
+    }
+
+    const updatedRequest = await RentRequest.findByIdAndUpdate(
+      requestId,
       { status: 'approved' },
       { new: true }
     );
-    if (!request) return res.status(404).json({ error: 'Request not found' });
-    res.json(request);
+
+    res.status(200).json({
+      message: 'Request approved successfully',
+      request: updatedRequest,
+    });
+
   } catch (err) {
-    res.status(400).json({ error: err.message });
+    console.log('Approve Request Error:', err);
+
+    res.status(500).json({
+      message: 'Failed to approve request',
+      error: err.message,
+    });
   }
 };

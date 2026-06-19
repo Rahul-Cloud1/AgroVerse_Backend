@@ -1,4 +1,5 @@
-require('dotenv').config();
+const path = require('path');
+require('dotenv').config({ path: path.join(__dirname, '.env') });
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -9,10 +10,12 @@ const orderRoutes = require('./routes/orders');
 const equipmentRoutes = require('./routes/equipment');
 const rentRequestRoutes = require('./routes/rentRequests'); // Make sure the file is named rentRequests.js
 const uploadRoutes = require('./routes/upload');
+const i18nMiddleware = require('./middleware/i18nMiddleware');
 
 const app = express();
 app.use(express.json());
 app.use(cors());
+app.use(i18nMiddleware);
 
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log('MongoDB connected'))

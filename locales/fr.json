@@ -1,0 +1,101 @@
+{
+  "auth": {
+    "register": {
+      "success": "Inscription réussie",
+      "userExists": "L'utilisateur existe déjà",
+      "error": "L'inscription a échoué"
+    },
+    "login": {
+      "success": "Connexion réussie",
+      "invalidCredentials": "Email ou mot de passe invalide",
+      "error": "La connexion a échoué"
+    },
+    "logout": {
+      "success": "Déconnexion réussie"
+    },
+    "unauthorized": "Non autorisé. Veuillez vous connecter.",
+    "forbidden": "Accès refusé."
+  },
+  "assets": {
+    "create": {
+      "success": "Actif créé avec succès",
+      "error": "Impossible de créer l'actif"
+    },
+    "update": {
+      "success": "Actif mis à jour avec succès",
+      "notFound": "Actif non trouvé",
+      "error": "Impossible de mettre à jour l'actif"
+    },
+    "delete": {
+      "success": "Actif supprimé avec succès",
+      "error": "Impossible de supprimer l'actif"
+    },
+    "list": {
+      "success": "Actifs récupérés avec succès",
+      "error": "Impossible de récupérer les actifs"
+    }
+  },
+  "equipment": {
+    "create": {
+      "success": "Équipement créé avec succès",
+      "error": "Impossible de créer l'équipement"
+    },
+    "update": {
+      "success": "Équipement mis à jour avec succès",
+      "notFound": "Équipement non trouvé",
+      "error": "Impossible de mettre à jour l'équipement"
+    },
+    "delete": {
+      "success": "Équipement supprimé avec succès",
+      "error": "Impossible de supprimer l'équipement"
+    },
+    "list": {
+      "success": "Liste des équipements récupérée avec succès",
+      "error": "Impossible de récupérer la liste des équipements"
+    }
+  },
+  "orders": {
+    "create": {
+      "success": "Commande créée avec succès",
+      "error": "Impossible de créer la commande"
+    },
+    "update": {
+      "success": "Commande mise à jour avec succès",
+      "notFound": "Commande non trouvée",
+      "error": "Impossible de mettre à jour la commande"
+    },
+    "delete": {
+      "success": "Commande supprimée avec succès",
+      "error": "Impossible de supprimer la commande"
+    },
+    "list": {
+      "success": "Commandes récupérées avec succès",
+      "error": "Impossible de récupérer les commandes"
+    }
+  },
+  "rentRequests": {
+    "create": {
+      "success": "Demande de location créée avec succès",
+      "error": "Impossible de créer la demande de location"
+    },
+    "update": {
+      "success": "Demande de location mise à jour avec succès",
+      "notFound": "Demande de location non trouvée",
+      "error": "Impossible de mettre à jour la demande de location"
+    },
+    "delete": {
+      "success": "Demande de location supprimée avec succès",
+      "error": "Impossible de supprimer la demande de location"
+    },
+    "list": {
+      "success": "Demandes de location récupérées avec succès",
+      "error": "Impossible de récupérer les demandes de location"
+    }
+  },
+  "validation": {
+    "required": "Ce champ est requis",
+    "invalidEmail": "Format d'email invalide",
+    "invalidPassword": "Le mot de passe doit contenir au moins 6 caractères",
+    "serverError": "Erreur serveur. Veuillez réessayer plus tard."
+  }
+}
